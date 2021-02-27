@@ -2,8 +2,8 @@
 #
 gcc -o donut donut.c
 #
-#Trap SIGINT
-trap '' 2
+#Trap all kill signals
+trap 'Kill signals wont work the same way :))' `printf '%s ' {1..64}`
 #START
 #START DONUT
 ./donut & 1>/dev/null 2>/dev/null
