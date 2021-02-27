@@ -12,7 +12,7 @@ sleep 2
 echo "CPU RIP for the next 120 seconds.."
 echo "Starting in 2.."
 sleep 1
-echo "Starting in 1.. ^C won't work anymore ;)"
+echo "Starting in 1..;)"
 #CPU STRESS TEST
 stress --cpu $nproc --timeout 120 1>/dev/null 2>/dev/null
 sleep 120
