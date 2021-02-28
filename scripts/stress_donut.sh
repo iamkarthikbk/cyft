@@ -3,17 +3,18 @@
 gcc -o donut donut.c
 #
 #Trap all kill signals
-trap '' `printf '%s ' {1..64}`
+trap 'Kill signals wont work the same way :))' `printf '%s ' {1..64}`
 #START
 #START DONUT
-./donut &
+./donut & 1>/dev/null 2>/dev/null
 echo "Hungry? Have a donut while I hog your system resources ;)"
+sleep 2
 echo "CPU RIP for the next 120 seconds.."
 echo "Starting in 2.."
 sleep 1
 echo "Starting in 1..;)"
 #CPU STRESS TEST
-stress --cpu 36 --timeout 120 1>/dev/null 2>/dev/null
+stress --cpu $nproc --timeout 120 1>/dev/null 2>/dev/null
 sleep 120
 echo "Return status $?"
 echo "I'm going to spare your CPU for now, Memory - you're up next"
